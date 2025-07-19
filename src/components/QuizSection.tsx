@@ -62,39 +62,39 @@ const QuizSection = () => {
   const progress = showResult ? 100 : (selectedAnswer !== null ? 75 : 0);
 
   return (
-    <section className="py-20 px-6">
+    <section className="px-4 py-8 pb-24 md:py-20 md:px-6">
       <div className="max-w-4xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Brain className="w-8 h-8 text-neon-purple animate-pulse-glow" />
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               Daily Brain Teaser
             </h2>
           </div>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm md:text-lg text-muted-foreground px-2 md:px-0">
             Test your gaming knowledge and earn XP with our daily quiz challenge
           </p>
         </div>
 
         {/* Stats cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-gradient-surface border border-border rounded-xl p-6 text-center animate-slide-up">
-            <Zap className="w-8 h-8 text-neon-cyan mx-auto mb-3" />
-            <div className="text-2xl font-bold text-neon-cyan">{currentStreak}</div>
-            <div className="text-sm text-muted-foreground">Day Streak</div>
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-8">
+          <div className="bg-gradient-surface border border-border rounded-lg md:rounded-xl p-3 md:p-6 text-center animate-slide-up">
+            <Zap className="w-6 h-6 md:w-8 md:h-8 text-neon-cyan mx-auto mb-2 md:mb-3" />
+            <div className="text-lg md:text-2xl font-bold text-neon-cyan">{currentStreak}</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Streak</div>
           </div>
 
-          <div className="bg-gradient-surface border border-border rounded-xl p-6 text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            <Gift className="w-8 h-8 text-neon-pink mx-auto mb-3" />
-            <div className="text-2xl font-bold text-neon-pink">{todayXP} XP</div>
-            <div className="text-sm text-muted-foreground">Today's Earned</div>
+          <div className="bg-gradient-surface border border-border rounded-lg md:rounded-xl p-3 md:p-6 text-center animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <Gift className="w-6 h-6 md:w-8 md:h-8 text-neon-pink mx-auto mb-2 md:mb-3" />
+            <div className="text-lg md:text-2xl font-bold text-neon-pink">{todayXP} XP</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Today</div>
           </div>
 
-          <div className="bg-gradient-surface border border-border rounded-xl p-6 text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <Clock className="w-8 h-8 text-neon-green mx-auto mb-3" />
-            <div className="text-2xl font-bold text-neon-green">{formatTime(timeLeft)}</div>
-            <div className="text-sm text-muted-foreground">Next Reset</div>
+          <div className="bg-gradient-surface border border-border rounded-lg md:rounded-xl p-3 md:p-6 text-center animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            <Clock className="w-6 h-6 md:w-8 md:h-8 text-neon-green mx-auto mb-2 md:mb-3" />
+            <div className="text-sm md:text-2xl font-bold text-neon-green">{formatTime(timeLeft)}</div>
+            <div className="text-xs md:text-sm text-muted-foreground">Reset</div>
           </div>
         </div>
 
@@ -114,7 +114,7 @@ const QuizSection = () => {
             <Badge className="mb-4 bg-gradient-primary text-primary-foreground">
               Daily Challenge
             </Badge>
-            <h3 className="text-xl font-semibold text-foreground mb-2">
+            <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 leading-relaxed">
               {dailyQuiz.question}
             </h3>
           </div>
@@ -126,7 +126,7 @@ const QuizSection = () => {
                 key={index}
                 onClick={() => handleAnswerSelect(index)}
                 disabled={showResult}
-                className={`w-full p-4 text-left rounded-lg border-2 transition-all duration-300 ${
+                className={`w-full p-3 md:p-4 text-left rounded-lg border-2 transition-all duration-300 text-sm md:text-base ${
                   selectedAnswer === index
                     ? showResult
                       ? index === dailyQuiz.correct
