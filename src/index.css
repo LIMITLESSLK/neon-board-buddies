@@ -169,7 +169,7 @@ All colors MUST be HSL.
   }
 
   .rank-card:hover {
-    @apply scale-102;
+    @apply scale-105;
     box-shadow: var(--shadow-soft);
   }
 
